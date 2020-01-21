@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="br.com.ioasys.camp.educao.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_forgottenPasswordFragment"
+            app:destination="@id/forgottenPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgottenPasswordFragment"
+        android:name="br.com.ioasys.camp.educao.ForgottenPasswordFragment"
+        android:label="fragment_forgotten_password"
+        tools:layout="@layout/fragment_forgotten_password" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="br.com.ioasys.camp.educao.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>
