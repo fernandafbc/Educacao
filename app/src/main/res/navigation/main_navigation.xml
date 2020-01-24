@@ -11,24 +11,12 @@
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
-            android:id="@+id/action_mainFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_forgottenPasswordFragment"
-            app:destination="@id/forgottenPasswordFragment" />
+            android:id="@+id/action_mainFragment_to_monitorsListFragment"
+            app:destination="@id/monitorsListFragment" />
     </fragment>
     <fragment
-        android:id="@+id/forgottenPasswordFragment"
-        android:name="br.com.ioasys.camp.educao.ForgottenPasswordFragment"
-        android:label="fragment_forgotten_password"
-        tools:layout="@layout/fragment_forgotten_password" />
-    <fragment
-        android:id="@+id/registerFragment"
-        android:name="br.com.ioasys.camp.educao.RegisterFragment"
-        android:label="fragment_register"
-        tools:layout="@layout/fragment_register" >
-        <action
-            android:id="@+id/action_registerFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
-    </fragment>
+        android:id="@+id/monitorsListFragment"
+        android:name="br.com.ioasys.camp.educao.ui.main.MonitorsListFragment"
+        android:label="fragment_monitors_list"
+        tools:layout="@layout/fragment_monitors_list" />
 </navigation>

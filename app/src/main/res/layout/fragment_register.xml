@@ -1,227 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#08D9D6"
-    tools:context=".RegisterFragment"
-    android:fillViewport="true">
+    android:background="@drawable/background"
+    android:fillViewport="true"
+    tools:context=".ui.authentication.register.RegisterFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#08D9D6"
-        >
-
+        android:layout_height="wrap_content"
+        android:background="@drawable/background">
 
         <TextView
+            android:id="@+id/registrationTxt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="89dp"
-            android:text="@string/make_registration_txt"
-            android:textSize="20sp"
-            android:id="@+id/registrationTxt"
             android:gravity="center_horizontal"
+            android:text="@string/make_registration_txt"
             android:textColor="#252A34"
-
-            />
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
+            android:id="@+id/nameEdTxt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
             android:layout_marginTop="65dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:theme="@style/TextAppearance.App.TextInputLayout"
-            app:layout_constraintTop_toBottomOf="@+id/registrationTxt"
+            android:layout_marginEnd="32dp"
             android:hint="@string/name_register_edTxt"
             android:textSize="14sp"
-            android:id="@+id/nameEdTxt"
+            android:theme="@style/TextAppearance.App.TextInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/registrationTxt"
 
             />
 
         <TextView
+            android:id="@+id/sexTxt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/sex_register_txt"
+            android:textColor="#252A34"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameEdTxt"
-            android:id="@+id/sexTxt"
-            android:text="@string/sex_register_txt"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:textSize="14sp"
-            android:textColor="#252A34"
 
             />
 
         <Spinner
+            android:id="@+id/sexSpinner"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="4dp"
+            android:entries="@array/sexOptions"
+            android:scrollbarSize="14dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/sexTxt"
             app:layout_constraintTop_toBottomOf="@+id/nameEdTxt"
-            android:id="@+id/sexSpinner"
-            android:layout_marginStart="64dp"
+
+            />
+
+        <TextView
+            android:id="@+id/universityTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/university_register_txt"
+            android:textColor="#252A34"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sexSpinner"
+
+            />
+
+        <Spinner
+            android:id="@+id/universitySpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
             android:scrollbarSize="14dp"
-            android:entries="@array/sexOptions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/universityTxt"
+            app:layout_constraintTop_toBottomOf="@+id/sexSpinner"
+
+            />
+
+        <EditText
+            android:id="@+id/registrationEdTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/registration_number_edTxt"
+            android:inputType="number"
+            android:textSize="14sp"
+            android:theme="@style/TextAppearance.App.TextInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/universitySpinner"
+
+            />
+
+        <EditText
+            android:id="@+id/phoneEdTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/phone_register_edTxt"
+            android:inputType="phone"
+            android:textSize="14sp"
+            android:theme="@style/TextAppearance.App.TextInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/registrationEdTxt"
+
+            />
+
+        <EditText
+            android:id="@+id/emailRegEdTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/email_register_edTxt"
+            android:inputType="textEmailAddress"
+            android:textSize="14sp"
+            android:theme="@style/TextAppearance.App.TextInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phoneEdTxt"
+
+            />
+
+        <EditText
+            android:id="@+id/passwordRegEdTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/password_register_edTxt"
+            android:inputType="textPassword"
+            android:textSize="14sp"
+            android:theme="@style/TextAppearance.App.TextInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emailRegEdTxt"
+            app:passwordToggleEnabled="true"
+
+            />
+
+        <EditText
+            android:id="@+id/confirmPasswordRegEdTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/confirm_password_register_edTxt"
+            android:inputType="textPassword"
+            android:textSize="14sp"
+            android:theme="@style/TextAppearance.App.TextInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordRegEdTxt"
+            app:passwordToggleEnabled="true"
 
             />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sexSpinner"
-            android:id="@+id/universityTxt"
-            android:text="@string/university_register_txt"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:textColor="#252A34"
-
-            />
-
-        <Spinner
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/universityTxt"
-            app:layout_constraintTop_toBottomOf="@+id/sexSpinner"
-            android:id="@+id/universitySpinner"
-            android:layout_marginStart="32dp"
-            android:scrollbarSize="14dp"
-
-            />
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/confirmPasswordRegEdTxt"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:theme="@style/TextAppearance.App.TextInputLayout"
-            app:layout_constraintTop_toBottomOf="@+id/universitySpinner"
-            android:id="@+id/registrationEdTxt"
-            android:hint="@string/registration_number_edTxt"
-            android:inputType="number"
-            android:textSize="14sp"
-
-            />
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:theme="@style/TextAppearance.App.TextInputLayout"
-            app:layout_constraintTop_toBottomOf="@+id/registrationEdTxt"
-            android:id="@+id/phoneEdTxt"
-            android:hint="@string/phone_register_edTxt"
-            android:inputType="phone"
-            android:textSize="14sp"
-
-            />
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:theme="@style/TextAppearance.App.TextInputLayout"
-            app:layout_constraintTop_toBottomOf="@+id/phoneEdTxt"
-            android:id="@+id/emailRegEdTxt"
-            android:hint="@string/email_register_edTxt"
-            android:inputType="textEmailAddress"
-            android:textSize="14sp"
-
-            />
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:passwordToggleEnabled="true"
-            android:theme="@style/TextAppearance.App.TextInputLayout"
-            app:layout_constraintTop_toBottomOf="@+id/emailRegEdTxt"
-            android:id="@+id/passwordRegEdTxt"
-            android:hint="@string/password_register_edTxt"
-            android:inputType="textPassword"
-            android:textSize="14sp"
-
-            />
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:passwordToggleEnabled="true"
-            android:theme="@style/TextAppearance.App.TextInputLayout"
-            app:layout_constraintTop_toBottomOf="@+id/passwordRegEdTxt"
-            android:id="@+id/confirmPasswordRegEdTxt"
-            android:hint="@string/confirm_password_register_edTxt"
-            android:inputType="textPassword"
-            android:textSize="14sp"
+            android:layout_marginTop="16dp"
+            android:textSize="20sp"
+            android:id="@+id/registerMonitorTxt"
+            android:text="Deseja se cadastrar como monitor? "
 
             />
 
         <Button
+            android:id="@+id/confirmButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/confirmPasswordRegEdTxt"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="72dp"
+            android:background="@drawable/rounded_button"
             android:text="@string/register_button"
             android:textColor="#ffffff"
             android:textSize="20sp"
-            android:background="@drawable/rounded_button"
-            android:layout_marginEnd="72dp"
-            android:layout_marginStart="72dp"
-            android:layout_marginTop="80dp"
-            android:id="@+id/confirmButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/registerMonitorTxt"
+            app:layout_goneMarginEnd="16dp"
 
             />
 
         <TextView
+            android:id="@+id/haveAccountTxt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="105dp"
             android:layout_marginBottom="20dp"
             android:text="@string/have_account_register_txt"
-            android:layout_marginStart="105dp"
             android:textColor="#252A34"
-            android:id="@+id/haveAccountTxt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
 
             />
 
         <TextView
+            android:id="@+id/loginTxt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/haveAccountTxt"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="20dp"
             android:text="@string/login_register_txt"
             android:textColor="#FF2E63"
-            android:layout_marginBottom="20dp"
-            android:layout_marginStart="4dp"
-            android:id="@+id/loginTxt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/haveAccountTxt"
 
             />
 

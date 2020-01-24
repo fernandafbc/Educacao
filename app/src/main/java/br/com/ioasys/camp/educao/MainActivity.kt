@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener{
     private var sexSpinner: Spinner? = null
 
 
-
     override fun onNothingSelected(parent: AdapterView<*>?) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }

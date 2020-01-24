@@ -1,4 +1,4 @@
-package br.com.ioasys.camp.educao
+package br.com.ioasys.camp.educao.ui.authentication.forgot_password
 
 
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import br.com.ioasys.camp.educao.R
 
 /**
  * A simple [Fragment] subclass.

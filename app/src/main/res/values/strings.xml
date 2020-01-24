@@ -15,11 +15,15 @@
     <string name="have_account_register_txt">Já tem uma conta?</string>
     <string name="login_register_txt">Faça login</string>
     <string name="register_button">cadastrar</string>
+    <string name="main_fragment_empty_error">Este campo não pode ser vazio.</string>
 
     <string-array name="sexOptions">
         <item> </item>
         <item>Homem</item>
         <item>Mulher</item>
     </string-array>
+    <string name="title_activity_teste">TesteActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 
 </resources>
