@@ -34,13 +34,11 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        loginTxt.setOnClickListener {
-//            it.findNavController().navigate(R.id.action_registerFragment_to_mainFragment)
-//        }
-
-        registerMonitorTxt.setOnClickListener {
-            it.findNavController().navigate(R.id.action_registerFragment_to_monitorRegisterBottomSheetFragment)
+        loginTxt.setOnClickListener {
+            it.findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }
+
+
     }
 
 

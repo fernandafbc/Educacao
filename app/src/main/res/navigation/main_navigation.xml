@@ -19,4 +19,9 @@
         android:name="br.com.ioasys.camp.educao.ui.main.MonitorsListFragment"
         android:label="fragment_monitors_list"
         tools:layout="@layout/fragment_monitors_list" />
+    <fragment
+        android:id="@+id/helpListFragment"
+        android:name="br.com.ioasys.camp.educao.ui.main.HelpListFragment"
+        android:label="fragment_help_list"
+        tools:layout="@layout/fragment_help_list" />
 </navigation>

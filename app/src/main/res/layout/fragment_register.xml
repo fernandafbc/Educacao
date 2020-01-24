@@ -24,7 +24,8 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/nameEdTxt"/>
 
         <EditText
             android:id="@+id/nameEdTxt"
@@ -39,6 +40,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/registrationTxt"
+            app:layout_constraintBottom_toTopOf="@id/sexTxt"
 
             />
 
@@ -54,6 +56,8 @@
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameEdTxt"
+            app:layout_constraintEnd_toStartOf="@+id/sexSpinner"
+            app:layout_constraintBottom_toTopOf="@+id/universityTxt"
 
             />
 
@@ -68,6 +72,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/sexTxt"
             app:layout_constraintTop_toBottomOf="@+id/nameEdTxt"
+            app:layout_constraintBottom_toTopOf="@+id/universitySpinner"
 
             />
 
@@ -81,6 +86,8 @@
             android:textColor="#252A34"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sexSpinner"
+            app:layout_constraintEnd_toStartOf="@+id/universitySpinner"
+            app:layout_constraintBottom_toTopOf="@+id/registrationEdTxt"
 
             />
 
@@ -94,6 +101,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/universityTxt"
             app:layout_constraintTop_toBottomOf="@+id/sexSpinner"
+            app:layout_constraintBottom_toTopOf="@+id/registrationEdTxt"
 
             />
 
@@ -111,6 +119,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/universitySpinner"
+            app:layout_constraintBottom_toTopOf="@+id/phoneEdTxt"
 
             />
 
@@ -128,6 +137,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/registrationEdTxt"
+            app:layout_constraintBottom_toTopOf="@+id/emailRegEdTxt"
 
             />
 
@@ -145,6 +155,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/phoneEdTxt"
+            app:layout_constraintBottom_toTopOf="@+id/passwordRegEdTxt"
 
             />
 
@@ -162,6 +173,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/emailRegEdTxt"
+            app:layout_constraintBottom_toTopOf="@+id/confirmPasswordRegEdTxt"
             app:passwordToggleEnabled="true"
 
             />
@@ -180,20 +192,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordRegEdTxt"
+            app:layout_constraintBottom_toTopOf="@+id/confirmButton"
             app:passwordToggleEnabled="true"
-
-            />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/confirmPasswordRegEdTxt"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="16dp"
-            android:textSize="20sp"
-            android:id="@+id/registerMonitorTxt"
-            android:text="Deseja se cadastrar como monitor? "
 
             />
 
@@ -202,7 +202,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="72dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="72dp"
             android:background="@drawable/rounded_button"
             android:text="@string/register_button"
@@ -210,7 +210,8 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/registerMonitorTxt"
+            app:layout_constraintTop_toBottomOf="@+id/confirmPasswordRegEdTxt"
+            app:layout_constraintBottom_toTopOf="@+id/haveAccountTxt"
             app:layout_goneMarginEnd="16dp"
 
             />
@@ -220,11 +221,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="105dp"
-            android:layout_marginBottom="20dp"
             android:text="@string/have_account_register_txt"
             android:textColor="#252A34"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:maxLines="1"
+            app:layout_constraintTop_toBottomOf="@+id/confirmButton"
+            android:layout_marginTop="8dp"
 
             />
 
@@ -232,12 +235,14 @@
             android:id="@+id/loginTxt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:layout_marginStart="4dp"
-            android:layout_marginBottom="20dp"
             android:text="@string/login_register_txt"
             android:textColor="#FF2E63"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/haveAccountTxt"
+            app:layout_constraintTop_toBottomOf="@+id/confirmButton"
 
             />
 

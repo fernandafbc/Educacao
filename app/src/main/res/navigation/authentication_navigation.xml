@@ -27,8 +27,8 @@
         android:name="br.com.ioasys.camp.educao.ui.authentication.register.RegisterFragment"
         tools:layout="@layout/fragment_register" >
         <action
-            android:id="@+id/action_registerFragment_to_monitorRegisterBottomSheetFragment"
-            app:destination="@id/monitorRegisterBottomSheetFragment" />
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/forgottenPasswordFragment"
@@ -40,9 +40,4 @@
         android:name="br.com.ioasys.camp.educao.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
-    <dialog
-        android:id="@+id/monitorRegisterBottomSheetFragment"
-        android:name="br.com.ioasys.camp.educao.ui.authentication.register.MonitorRegisterBottomSheetFragment"
-        android:label="fragment_monitor_register_bottom_sheet"
-        tools:layout="@layout/fragment_monitor_register_bottom_sheet" />
 </navigation>

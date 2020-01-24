@@ -22,9 +22,9 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        goBtn.setOnClickListener {
-            it.findNavController().navigate(R.id.action_mainFragment_to_monitorsListFragment)
-        }
+//        goBtn.setOnClickListener {
+//            it.findNavController().navigate(R.id.action_mainFragment_to_monitorsListFragment)
+//        }
 
 
     }

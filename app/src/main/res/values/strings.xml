@@ -16,6 +16,7 @@
     <string name="login_register_txt">Faça login</string>
     <string name="register_button">cadastrar</string>
     <string name="main_fragment_empty_error">Este campo não pode ser vazio.</string>
+    <string name="main_fragment_format_error">Formato incorreto. </string>
 
     <string-array name="sexOptions">
         <item> </item>

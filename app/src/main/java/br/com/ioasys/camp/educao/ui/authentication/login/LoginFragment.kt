@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.util.PatternsCompat
 import androidx.navigation.findNavController
 
 import br.com.ioasys.camp.educao.R
@@ -59,10 +60,17 @@ class LoginFragment : Fragment() {
         val email = emailLogin ?: ""
         val password = passwordLogin ?: ""
 
+        val emailVerify: String = email.toString()
+
         if (email.isEmpty()) {
             isValid = false
             emailInputLayout.error = getString(R.string.main_fragment_empty_error)
-        } else {
+        }
+        else if(isEmailNotValid(emailVerify)){
+            isValid = false
+            emailInputLayout.error = getString(R.string.main_fragment_format_error)
+        }
+        else {
             emailInputLayout.error = null
         }
 
@@ -74,6 +82,10 @@ class LoginFragment : Fragment() {
         }
 
         return isValid
+    }
+
+    private fun isEmailNotValid(email: String): Boolean {
+        return !PatternsCompat.EMAIL_ADDRESS.matcher(email).matches()
     }
 
 }
