@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import br.com.ioasys.camp.educao.MainActivity
 
 import br.com.ioasys.camp.educao.R
 import kotlinx.android.synthetic.main.fragment_monitors_list.*
@@ -26,6 +27,12 @@ class MonitorsListFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_monitors_list, container, false)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        (activity as MainActivity).updateToolbar(title = "")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

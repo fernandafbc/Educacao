@@ -10,7 +10,6 @@
         android:layout_height="match_parent"
         android:background="@drawable/background">
 
-<!--     Todo Colocar wrap_content-->
         <ImageView
             android:id="@+id/logoImage"
             android:layout_width="156dp"

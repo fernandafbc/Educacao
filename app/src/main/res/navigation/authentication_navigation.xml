@@ -21,6 +21,9 @@
             app:destination="@id/mainActivity"
             app:launchSingleTop="true"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_profileActivity"
+            app:destination="@id/profileActivity" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -29,6 +32,9 @@
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_secondRegisterFragment"
+            app:destination="@id/secondRegisterFragment" />
     </fragment>
     <fragment
         android:id="@+id/forgottenPasswordFragment"
@@ -40,4 +46,48 @@
         android:name="br.com.ioasys.camp.educao.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/secondRegisterFragment"
+        android:name="br.com.ioasys.camp.educao.ui.authentication.register.SecondRegisterFragment"
+        android:label="fragment_second_register"
+        tools:layout="@layout/fragment_second_register" >
+        <action
+            android:id="@+id/action_secondRegisterFragment_to_thirdRegisterFragment"
+            app:destination="@id/thirdRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdRegisterFragment"
+        android:name="br.com.ioasys.camp.educao.ui.authentication.register.ThirdRegisterFragment"
+        android:label="fragment_third_register"
+        tools:layout="@layout/fragment_third_register" >
+        <action
+            android:id="@+id/action_thirdRegisterFragment_to_monitorRegisterFragment"
+            app:destination="@id/monitorRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/monitorRegisterFragment"
+        android:name="br.com.ioasys.camp.educao.ui.authentication.register.MonitorRegisterFragment"
+        android:label="fragment_monitor_register"
+        tools:layout="@layout/fragment_monitor_register" >
+        <action
+            android:id="@+id/action_monitorRegisterFragment_to_subjectRegisterFragment"
+            app:destination="@id/subjectRegisterFragment" />
+        <action
+            android:id="@+id/action_monitorRegisterFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/subjectRegisterFragment"
+        android:name="br.com.ioasys.camp.educao.ui.authentication.register.SubjectRegisterFragment"
+        android:label="fragment_subject_register"
+        tools:layout="@layout/fragment_subject_register" >
+        <action
+            android:id="@+id/action_subjectRegisterFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/profileActivity"
+        android:name="br.com.ioasys.camp.educao.ui.profile.ProfileActivity"
+        android:label="activity_profile"
+        tools:layout="@layout/activity_profile" />
 </navigation>

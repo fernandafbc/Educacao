@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/background"
-    tools:context=".ui.authentication.register.RegisterFragment">
+    tools:context=".ui.authentication.register.ThirdRegisterFragment">
 
     <TextView
-        android:id="@+id/registrationTxt"
+        android:id="@+id/thirdRegistrationTxt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="89dp"
@@ -20,78 +20,66 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/nameEdTxt"/>
+        app:layout_constraintBottom_toTopOf="@id/emailRegEdTxt"/>
 
     <EditText
-        android:id="@+id/nameEdTxt"
+        android:id="@+id/emailRegEdTxt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="32dp"
-        android:hint="@string/name_register_edTxt"
-        android:textSize="16sp"
+        android:hint="@string/email_register_edTxt"
+        android:inputType="textEmailAddress"
+        android:textSize="14sp"
         android:theme="@style/TextAppearance.App.TextInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrationTxt"
-        app:layout_constraintBottom_toTopOf="@id/sexTxt"
-
-        />
-
-    <TextView
-        android:id="@+id/sexTxt"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/sex_register_txt"
-        android:textColor="#252A34"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameEdTxt"
-        app:layout_constraintEnd_toStartOf="@+id/sexSpinner"
-        app:layout_constraintBottom_toTopOf="@+id/phoneEdTxt"
-
-        />
-
-    <Spinner
-        android:id="@+id/sexSpinner"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="4dp"
-        android:entries="@array/sexOptions"
-        android:scrollbarSize="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/sexTxt"
-        app:layout_constraintTop_toBottomOf="@+id/nameEdTxt"
-        app:layout_constraintBottom_toTopOf="@+id/phoneEdTxt"
+        app:layout_constraintTop_toBottomOf="@+id/thirdRegistrationTxt"
+        app:layout_constraintBottom_toTopOf="@+id/passwordRegEdTxt"
 
         />
 
     <EditText
-        android:id="@+id/phoneEdTxt"
+        android:id="@+id/passwordRegEdTxt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="32dp"
-        android:hint="@string/phone_register_edTxt"
-        android:inputType="phone"
-        android:textSize="16sp"
+        android:hint="@string/password_register_edTxt"
+        android:inputType="textPassword"
+        android:textSize="14sp"
         android:theme="@style/TextAppearance.App.TextInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sexSpinner"
-        app:layout_constraintBottom_toTopOf="@+id/confirmButton"
+        app:layout_constraintTop_toBottomOf="@+id/emailRegEdTxt"
+        app:layout_constraintBottom_toTopOf="@+id/confirmPasswordRegEdTxt"
+        app:passwordToggleEnabled="true"
 
         />
 
+    <EditText
+        android:id="@+id/confirmPasswordRegEdTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/confirm_password_register_edTxt"
+        android:inputType="textPassword"
+        android:textSize="14sp"
+        android:theme="@style/TextAppearance.App.TextInputLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordRegEdTxt"
+        app:layout_constraintBottom_toTopOf="@+id/thirdContinueButton"
+        app:passwordToggleEnabled="true"
+
+        />
 
     <ImageButton
-        android:id="@+id/confirmButton"
+        android:id="@+id/thirdContinueButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
@@ -101,8 +89,8 @@
         android:src="@drawable/ic_arrow_forward_black_24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneEdTxt"
-        app:layout_constraintBottom_toTopOf="@+id/haveAccountTxt"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordRegEdTxt"
+        app:layout_constraintBottom_toTopOf="@+id/thirdHaveAccountTxt"
         app:layout_goneMarginEnd="16dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
@@ -110,7 +98,7 @@
         />
 
     <TextView
-        android:id="@+id/haveAccountTxt"
+        android:id="@+id/thirdHaveAccountTxt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="105dp"
@@ -119,13 +107,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:maxLines="1"
-        app:layout_constraintTop_toBottomOf="@+id/confirmButton"
+        app:layout_constraintTop_toBottomOf="@+id/thirdContinueButton"
         android:layout_marginTop="8dp"
 
         />
 
     <TextView
-        android:id="@+id/loginTxt"
+        android:id="@+id/secondLoginTxt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -134,10 +122,9 @@
         android:textColor="#FF2E63"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/haveAccountTxt"
-        app:layout_constraintTop_toBottomOf="@+id/confirmButton"
+        app:layout_constraintStart_toEndOf="@+id/thirdHaveAccountTxt"
+        app:layout_constraintTop_toBottomOf="@+id/thirdContinueButton"
 
         />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

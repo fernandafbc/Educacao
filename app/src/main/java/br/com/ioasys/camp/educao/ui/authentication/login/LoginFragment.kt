@@ -39,6 +39,7 @@ class LoginFragment : Fragment() {
 
         forgottenPsswTxt.setOnClickListener {
             it.findNavController().navigate(R.id.action_loginFragment_to_forgottenPasswordFragment)
+
         }
 
         loginButton.setOnClickListener {
