@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener{
 
     private var sexSpinner: Spinner? = null
     //VEI VOU TESTAR ESSE BAGUIO
-    private var aloha = 1
+    private var aloha = 5
 
 
     override fun onNothingSelected(parent: AdapterView<*>?) {
