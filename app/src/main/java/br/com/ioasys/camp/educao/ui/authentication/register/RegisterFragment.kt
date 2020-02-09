@@ -38,6 +38,10 @@ class RegisterFragment : Fragment() {
             it.findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }
 
+        confirmButton.setOnClickListener {
+            it.findNavController().navigate(R.id.action_registerFragment_to_secondRegisterFragment)
+        }
+
 
     }
 

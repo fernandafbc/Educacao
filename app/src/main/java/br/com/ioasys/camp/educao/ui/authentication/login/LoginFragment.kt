@@ -7,21 +7,32 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.util.PatternsCompat
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 
 import br.com.ioasys.camp.educao.R
+import br.com.ioasys.camp.educao.service.models.request.LoginRequest
+import br.com.ioasys.camp.educao.service.models.response.LoginResponse
+import br.com.ioasys.camp.educao.service.repository.LoginRepository.server_Response
 import br.com.ioasys.camp.educao.ui.authentication.AuthenticationActivity
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.login_fragment.*
 
 class LoginFragment : Fragment() {
 
+    private lateinit var loginViewModel: LoginViewModel
+    private lateinit var loginRequest: LoginRequest
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         return inflater.inflate(R.layout.login_fragment, container, false)
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -33,12 +44,15 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        loginViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+
         registrateTxt.setOnClickListener {
             it.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
 
         forgottenPsswTxt.setOnClickListener {
             it.findNavController().navigate(R.id.action_loginFragment_to_forgottenPasswordFragment)
+
         }
 
         loginButton.setOnClickListener {
@@ -50,6 +64,10 @@ class LoginFragment : Fragment() {
                 it.findNavController()
                     .navigate(R.id.action_loginFragment_to_mainActivity)
                 activity?.finish()
+
+                loginRequest = LoginRequest(emailLogin.toString(), passwordLogin.toString())
+                observeLoginViewModel(loginViewModel)
+
             }
         }
     }
@@ -57,8 +75,8 @@ class LoginFragment : Fragment() {
     private fun isValidInput(emailLogin: Editable?, passwordLogin: Editable?): Boolean {
         var isValid = true
 
-        val email = emailLogin ?: ""
-        val password = passwordLogin ?: ""
+        val email = emailLogin?: ""
+        val password = passwordLogin?: ""
 
         val emailVerify: String = email.toString()
 
@@ -88,4 +106,25 @@ class LoginFragment : Fragment() {
         return !PatternsCompat.EMAIL_ADDRESS.matcher(email).matches()
     }
 
+    private fun observeLoginViewModel(loginViewModel: LoginViewModel){
+        var success = false
+        loginViewModel.requestLogin(loginRequest)
+        loginViewModel.loginObservable.observe(viewLifecycleOwner, Observer<LoginResponse>{
+            it.let {
+                success = true
+
+            }
+        })
+//        return success
+    }
+
+//    private fun showErrorMessage(){
+//        loginViewModel.
+//    }
+
 }
+//            when("$t") {
+//            "Invalid password"  -> server_Response = "Senha incorreta"
+//            "User not Found" -> server_Response = "Usuário não encontrado"
+//            "The user could not be authenticated" -> server_Response
+//        }
